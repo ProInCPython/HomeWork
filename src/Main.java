@@ -1,26 +1,16 @@
+import java.util.Locale;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
-        String minutes;
-        String seconds;
-        int n = in.nextInt();
-        int hours = n / 3600;
-        int minutes1 = (n - (hours * 3600)) / 60;
-        if (minutes1 < 10) {
-            minutes = "0" + minutes1;
+        in.useLocale(Locale.US);
+        double x = in.nextDouble();
+        if ((x >= -2 & x <= 3) | (x >= 6 & x <= 9)) {
+            System.out.println("false");
         }
         else {
-            minutes = "" + minutes1;
+            System.out.println("true");
         }
-        int seconds1 = (n - (hours * 3600)) - (minutes1 * 60);
-        if (seconds1 < 10) {
-            seconds = "0" + seconds1;
-        }
-        else {
-            seconds = "" + seconds1;
-        }
-        System.out.println(hours + ":" + minutes + ":" + seconds);
     }
 }
