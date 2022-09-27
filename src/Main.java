@@ -6,7 +6,7 @@ public class Main {
         Scanner in = new Scanner(System.in);
         in.useLocale(Locale.US);
         double x = in.nextDouble();
-        if ((x >= -2 & x <= 3) | (x >= 6 & x <= 9)) {
+        if ((x >= -2 && x <= 3) | (x >= 6 && x <= 9)) {
             System.out.println("false");
         }
         else {
