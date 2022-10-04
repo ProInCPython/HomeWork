@@ -3,29 +3,31 @@ import java.util.Scanner;
 public class Task3 {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
-        int n = in.nextInt();
-        String result = "TORT";
-        if (n % 100 >= 11 && n % 100 <= 20) {
-            result += "OV";
-        } else {
-            switch (n % 10) {
-                case 0:
-                case 5:
-                case 6:
-                case 7:
-                case 8:
-                case 9:
-                    result += "OV";
-                    break;
-                case 1:
-                    break;
-                case 2:
-                case 3:
-                case 4:
-                    result += "A";
-                    break;
+        System.out.println("Введите 0, если хотите получить ответ без использования массива и 1 в противном случае: ");
+        int flag = in.nextInt();
+        if (flag == 1) {
+            int s = in.nextInt();
+            int[] numbers = new int[s];
+            for (int i = 0; i < s; i++) {
+                numbers[i] = in.nextInt();
             }
+            int min = 1_000_000_000;
+            for (int i : numbers) {
+                if (i > 0 && i < min) {
+                    min = i;
+                }
+            }
+            System.out.println(min);
+        } else {
+            int min = 1_000_000_000;
+            int n = in.nextInt();
+            for (int i = 1; i <= n; ++i) {
+                int number = in.nextInt();
+                if (number > 0 && number < min) {
+                    min = number;
+                }
+            }
+            System.out.println(min);
         }
-        System.out.println(n + " " + result);
     }
 }
