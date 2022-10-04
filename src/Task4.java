@@ -3,15 +3,19 @@ import java.util.Scanner;
 public class Task4 {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
-        int n = in.nextInt();
-        int min = n % 10;
-        n /= 10;
-        while (n != 0) {
-            if (n % 10 < min && n % 10 != 0) {
-                min = n % 10;
-            }
-            n /= 10;
+        int s = in.nextInt();
+        int[] numbers = new int[s];
+        for (int i = 0; i < s; i++) {
+            numbers[i] = in.nextInt();
         }
-        System.out.println(min);
+        int current = numbers[0];
+        String result = "";
+        for (int i : numbers) {
+            if (i > current) {
+                result += i + " ";
+            }
+            current = i;
+        }
+        System.out.println(result);
     }
 }
