@@ -1,4 +1,3 @@
-import java.util.Scanner;
 
 public class MyArrays {
     public static double AvgOf4Digit(int[] a) {
@@ -16,13 +15,26 @@ public class MyArrays {
             return sum_of / counter;
         }
     }
-    public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
-        int n = in.nextInt();
-        int[] a = new int[n];
-        for (int i = 0; i < n; ++i) {
-            a[i] = in.nextInt();
+
+    public static int[] MinToBegin(int[] a) {
+        int min = a[0];
+        int index = 0;
+        int min_index = 0;
+        for (int i : a) {
+            if (i < min) {
+                min = i;
+                min_index = index;
+            }
+            index += 1;
         }
-        System.out.println(AvgOf4Digit(a));
+        for (int i = min_index; i > 0; --i) {
+            a[i] = a[i - 1];
+        }
+        a[0] = min;
+        return a;
+    }
+
+    public static void main(String[] args) {
+
     }
 }
