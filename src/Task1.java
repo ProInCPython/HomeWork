@@ -21,7 +21,8 @@ public class Task1 {
             }
             n -= 7;
         }
-        
+        System.out.println(Integer.toBinaryString(arr[0]));
+        System.out.println(numberOfZeros);
         for (byte b : arr) {
             for (int j = 6 - numberOfZeros; j >= 0; --j) {
                 System.out.print(((b & (1 << j)) != 0) + " ");
